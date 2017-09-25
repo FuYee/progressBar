@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>实时获取加载数据的进度条</title>
+  <script src="js/jquery.min.js"></script>
+  <style>
+    .bg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    .loading {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      overflow: hidden;
+    }
+
+    .loading-box {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      z-index: 999;
+      text-align: center;
+    }
+
+    .pic-loading {
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 3px 0 #666;
+      animation: rotated 1s infinite linear;
+    }
+
+    .loading b {
+      display: block;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+
+    @keyframes rotated {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="loading">
+  <div class="loading-box">
+    <span class="pic-loading"></span>
+    <b>0%</b>
+  </div>
+</div>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=615626109,85008197&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2881042354,83055802&fm=27&gp=0.jpg"></image>
+<image class="bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4247038184,1935821885&fm=27&gp=0.jpg"></image>
+
+
+<script type="text/javascript">
+ $(function () {
+   var imgArr = $('img');
+   var num = 0;
+   imgArr.each(function (i) {
+    var oImg = new Image();
+     oImg.onload = function () {
+       oImg.onload = null;
+       num++;
+       $('.loading-box b').html(parseInt(num/imgArr.length*100 )+ "%");
+       if(num>=i){
+         $('.loading').fadeOut()
+       }
+     }
+    oImg.src = imgArr[i].src;
+   })
+ })
+</script>
+</body>
+</html>
